@@ -3,7 +3,6 @@ const prefix = "!"
 const groupID = 3797799;
 const bot_token = process.env.botToken;
 const rblxCookie = process.env.rblxCookie;
-const officerRoleE = "Officer";
 const welcomeMessage = "Hi there, welcome to Viridian Federation!";
 const maxXP = 10;
 const xpAuditLogChannelID = "650602840322080768";
@@ -118,6 +117,7 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}${xpName}`)){
+    const officerRoleE = message.guild.roles.find("Officer");
     if (!message.member.roles.has(`${officerRoleE}`)){
       return message.channel.send(`Sorry ${message.author}, but only users with the **\`${officerRoleE}\`** can run that command!`).then(message => message.delete(5000));
     }
@@ -582,7 +582,7 @@ bot.on('message', async message => {
     return undefined;
   }
 
-  if (message.content.toLowerCase().startsWith(`${config.prefix}code`) || message.content.toLowerCase().startsWith(`${config.prefix}link`) || message.content.toLowerCase().startsWith(`${config.prefix}info`)){
+  if (message.content.toLowerCase().startsWith(`${prefix}code`) || message.content.toLowerCase().startsWith(`${prefix}link`) || message.content.toLowerCase().startsWith(`${prefix}info`)){
     var embed = new Discord.RichEmbed()
       .setColor(0xff3636)
       .setDescription(`I handle promotions!`)
