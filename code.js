@@ -1,15 +1,15 @@
 /* SETTINGS START */
 const prefix = "!"
-const groupID = 123123;
+const groupID = 3797799;
 const bot_token = process.env.botToken;
 const rblxCookie = process.env.rblxCookie;
 const officerRoleE = "Officer";
-const welcomeMessage = "Welcome!";
+const welcomeMessage = "Hi there, welcome to Viridian Federation!";
 const maxXP = 10;
-const xpAuditLogChannelID = "123123";
-const mainChatChannelID = "123123";
+const xpAuditLogChannelID = "650602840322080768";
+const mainChatChannelID = "510691362924920832";
 const fireBaseURL = process.env.fireBaseURL;
-const xpName = "xp";
+const xpName = "Valor";
 /* SETTINGS END */
 
 /* PACKAGES START */
