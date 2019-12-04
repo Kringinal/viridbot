@@ -582,6 +582,22 @@ bot.on('message', async message => {
     return undefined;
   }
 
+  if (message.content.toLowerCase().startsWith(`${config.prefix}code`) || message.content.toLowerCase().startsWith(`${config.prefix}link`) || message.content.toLowerCase().startsWith(`${config.prefix}info`)){
+    var embed = new Discord.RichEmbed()
+      .setColor(0xff3636)
+      .setDescription(`I handle promotions!`)
+    await message.channel.send(embed)
+    var embed = new Discord.RichEmbed()
+      .setColor(0x3072ff)
+      .setDescription(`Hey there, this is the bot!`)
+    await message.channel.send(embed)
+    var embed = new Discord.RichEmbed()
+      .setColor(0x1cff8e)
+      .setDescription(`Viridian Federation`)
+    return message.channel.send(embed)
+  }
+
+
 });
 
 
