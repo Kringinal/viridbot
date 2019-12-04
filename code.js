@@ -384,7 +384,7 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}setup`)){
-    if (message.author.id !== message.guild.owner.id or !== 419360471959732225){
+    if (message.author.roles.id !== 510688955294023680){
       return message.channel.send(`Sorry ${message.author}, but only the guild owner (${message.guild.owner}) can run that command!`).then(message => message.delete(5000));
     }
     if (groupID === 0){
