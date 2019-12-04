@@ -9,7 +9,7 @@ const maxXP = 10;
 const xpAuditLogChannelID = "650602840322080768";
 const mainChatChannelID = "510691362924920832";
 const fireBaseURL = process.env.fireBaseURL;
-const xpName = "Valor";
+const xpName = "valor";
 /* SETTINGS END */
 
 /* PACKAGES START */
@@ -118,7 +118,7 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}${xpName}`)){
-    if (!message.member.roles.permissions === 0x00020000){
+    if (!message.member.roles.has(`${officerRoleE}`)){
       return message.channel.send(`Sorry ${message.author}, but only users with the **\`${officerRoleE}\`** can run that command!`).then(message => message.delete(5000));
     }
     if (!args[1]){
