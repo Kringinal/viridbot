@@ -44,6 +44,8 @@ bot.on('message', async message => {
   const verificationCode = ['apple', 'rain', 'dog', 'cat', 'food','yum','pizza','raindrop','snow','birthday','cake','burger','soda','ice','no','yes','orange','pear','plum'];
   const promoLogs = bot.channels.get(`${xpAuditLogChannelID}`)
   const groupFunction = await bloxyClient.getGroup(groupID)
+  const officerRoleE = message.guild.roles.find(role => role.name === "Officer");
+  const owner = message.guild.roles.find(role => role.name === "Chancellor");
 
 
   if (message.author.bot) return;
@@ -116,7 +118,6 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}${xpName}`)){
-    const officerRoleE = message.guild.roles.find("Officer");
     if (!message.member.roles.has(`${officerRoleE}`)){
       return message.channel.send(`Sorry ${message.author}, but only users with the **\`${officerRoleE}\`** can run that command!`).then(message => message.delete(5000));
     }
@@ -383,7 +384,7 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}setup`)){
-    if (message.author.id !== 419360471959732225){
+    if (!message.member.roles.has(`${owner}`)){
       return message.channel.send(`Sorry ${message.author}, but only the guild owner (${message.guild.owner}) can run that command!`).then(message => message.delete(5000));
     }
     if (groupID === 0){
