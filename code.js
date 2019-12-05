@@ -118,7 +118,7 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}${xpName}`)){
-    if (!message.member.roles.has(`${officerRoleE}`)){
+    if (message.member.roles.exists("name", "Officer")){
       return message.channel.send(`Sorry ${message.author}, but only users with the **\`${officerRoleE}\`** can run that command!`).then(message => message.delete(5000));
     }
     if (!args[1]){
@@ -384,7 +384,7 @@ bot.on('message', async message => {
   }
 
   if (message.content.toLowerCase().startsWith(`${prefix}setup`)){
-    if (!message.member.roles.has(`${owner}`)){
+    if (message.member.roles.exists("name", "Chancellor")){
       return message.channel.send(`Sorry ${message.author}, but only the guild owner (${message.guild.owner}) can run that command!`).then(message => message.delete(5000));
     }
     if (groupID === 0){
