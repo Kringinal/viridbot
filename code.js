@@ -110,16 +110,6 @@ bot.on('message', async message => {
     }
     return message.channel.send(`I should never run into this last message.\n**If I do, you fucked up somewhere in the code.**`)
   }
-
-  if (message.content.toLowerCase().startsWith(`${prefix}joinrequests`)){
-     if (!message.member.roles.exists("name", "Officer")){
-      return message.channel.send(`Sorry ${message.author}, but only users with the **\`${officerRoleE}\`** can run that command!`).then(message => message.delete(5000));
-    }
-     else{
-         var req = rbx.getJoinRequests(3797799)
-         return message.channel.send(`${req} is pending.`)
-     }
-   }
   
   if (message.content.toLowerCase().startsWith(`${prefix}${xpName}`)){
     if (!message.member.roles.exists("name", "Officer")){
