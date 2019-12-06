@@ -42,7 +42,15 @@ bot.on('message', async message => {
   const officerRoleE = message.guild.roles.find(role => role.name === "Officer");
   const owner = message.guild.roles.find(role => role.name === "Chancellor");
 
-
+  let onShout = roblox.onShout(3797799);
+    onShout.on('data', function(post) {
+        console.log(`${post.poster.username} shouted: ${post.body}`);
+    });
+    onShout.on('error', function (err) {
+        console.error(err.stack);
+    });
+    
+    
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
 
@@ -248,6 +256,7 @@ bot.on('message', async message => {
                         .setDescription(`[${rblxUsername}](https://www.roblox.com/users/${userID}/profile) has been promoted!`)
                         await message.channel.send(embed)
                         rbx.promote(3797799, userID)
+                        rbx.post(3797799, `[VIRD.SYS]: ${rblxUsername} has gotten a promotion!`)
                       }
                     }
                   }
@@ -367,6 +376,7 @@ bot.on('message', async message => {
                       .setDescription(`[${rblxUsername}](https://www.roblox.com/users/${userID}/profile) has been promoted!`)
                       await message.channel.send(embed)
                       rbx.promote(3797799, userID)
+                      rbx.post(3797799, `[VIRD.SYS]: ${rblxUsername} has gotten a promotion!`)
                     }
                   }
                 }
