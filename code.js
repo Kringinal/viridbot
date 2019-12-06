@@ -17,9 +17,6 @@ const bot = new Discord.Client();
 const snekfetch = require('snekfetch');
 const rbx = require('noblox.js');
 const bloxy = require('bloxy');
-const bloxyClient = new bloxy({
-  cookie: `${rblxCookie}`
-})
 
 rbx.cookieLogin(`rblxCookie`);
 const firebase = require("firebase");
@@ -40,9 +37,8 @@ bot.on('message', async message => {
 
   const args = message.content.split(/[ ]+/)
   const verifiedRole = message.guild.roles.find(role => role.name === "Verified");
-  const verificationCode = ['apple', 'rain', 'dog', 'cat', 'food','yum','pizza','raindrop','snow','birthday','cake','burger','soda','ice','no','yes','orange','pear','plum'];
-  const promoLogs = bot.channels.get(`${xpAuditLogChannelID}`)
-  const groupFunction = await bloxyClient.getGroup(groupID)
+  const verificationCode = ['viridian', 'apple', 'rain', 'dog', 'cat', 'food','yum','pizza','raindrop','snow','birthday','cake','burger','soda','ice','no','yes','orange','pear','plum'];
+  const promoLogs = bot.channels.get(`${xpAuditLogChannelID}`);
   const officerRoleE = message.guild.roles.find(role => role.name === "Officer");
   const owner = message.guild.roles.find(role => role.name === "Chancellor");
 
@@ -219,7 +215,7 @@ bot.on('message', async message => {
 
                     if (Number(currentRankID) === Number(bodyRolesRankNum)){
                       if (currentXP < requiredXPAtCurrentRankID){
-                        await groupFunction.demote(Number(userID))
+                        rbx.demote(3797799, userID);
                         console.log('demoted')
                         var rblxUsername = await rbx.getUsernameFromId(userID)
                         var embed = new Discord.RichEmbed()
@@ -251,7 +247,7 @@ bot.on('message', async message => {
                         .setColor(0x26ff93)
                         .setDescription(`[${rblxUsername}](https://www.roblox.com/users/${userID}/profile) has been promoted!`)
                         await message.channel.send(embed)
-                        await groupFunction.promote(Number(userID));
+                        rbx.promote(3797799, userID);
                       }
                     }
                   }
