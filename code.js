@@ -42,7 +42,7 @@ bot.on('message', async message => {
   const officerRoleE = message.guild.roles.find(role => role.name === "Officer");
   const owner = message.guild.roles.find(role => role.name === "Chancellor");
 
-  let onShout = roblox.onShout(3797799);
+  let onShout = rbx.onShout(3797799);
     onShout.on('data', function(post) {
         console.log(`${post.poster.username} shouted: ${post.body}`);
     });
