@@ -41,15 +41,6 @@ bot.on('message', async message => {
   const promoLogs = bot.channels.get(`${xpAuditLogChannelID}`);
   const officerRoleE = message.guild.roles.find(role => role.name === "Officer");
   const owner = message.guild.roles.find(role => role.name === "Chancellor");
-
-  let onShout = rbx.onShout(3797799);
-    onShout.on('data', function(post) {
-        console.log(`${post.poster.username} shouted: ${post.body}`);
-    });
-    onShout.on('error', function (err) {
-        console.error(err.stack);
-    });
-    
     
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
@@ -120,6 +111,15 @@ bot.on('message', async message => {
     return message.channel.send(`I should never run into this last message.\n**If I do, you fucked up somewhere in the code.**`)
   }
 
+  if (message.content.toLowerCase().startsWith(`${prefix}joinrequests`)){
+     if (!message.member.roles.exists("name", "Officer")){
+      return message.channel.send(`Sorry ${message.author}, but only users with the **\`${officerRoleE}\`** can run that command!`).then(message => message.delete(5000));
+    }
+     else{
+         var req = rbx.getJoinRequests(3797799)
+         return message.channel.send(`${req} is pending.`)
+     }
+  
   if (message.content.toLowerCase().startsWith(`${prefix}${xpName}`)){
     if (!message.member.roles.exists("name", "Officer")){
       return message.channel.send(`Sorry ${message.author}, but only users with the **\`${officerRoleE}\`** can run that command!`).then(message => message.delete(5000));
