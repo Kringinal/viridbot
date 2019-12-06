@@ -18,7 +18,7 @@ const snekfetch = require('snekfetch');
 const rbx = require('noblox.js');
 const bloxy = require('bloxy');
 
-rbx.cookieLogin(`rblxCookie`);
+rbx.cookieLogin(`${rblxCookie}`);
 const firebase = require("firebase");
 const firebaseConfig = {
     databaseURL: `${fireBaseURL}`,
