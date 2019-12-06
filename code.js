@@ -217,7 +217,7 @@ bot.on('message', async message => {
                       if (currentXP < requiredXPAtCurrentRankID){
                         console.log('demoted')
                         var rblxUsername = await rbx.getUsernameFromId(userID)
-                        rbx.demote(3797799, ${userID});
+                        rbx.demote(3797799, userID)
                         var embed = new Discord.RichEmbed()
                         .setColor(0xeb4034)
                         .setDescription(`Unfortunately, [${rblxUsername}](https://www.roblox.com/users/${userID}/profile) has been demoted because [${rblxUsername}](https://www.roblox.com/users/${userID}/profile)'s ${xpName} was less than the required amount of ${xpName} for the rank of **\`${bodyRoleRankName}\` (${requiredXPAtCurrentRankID})** `)
@@ -247,7 +247,7 @@ bot.on('message', async message => {
                         .setColor(0x26ff93)
                         .setDescription(`[${rblxUsername}](https://www.roblox.com/users/${userID}/profile) has been promoted!`)
                         await message.channel.send(embed)
-                        rbx.promote(3797799, ${userID});
+                        rbx.promote(3797799, userID)
                       }
                     }
                   }
@@ -334,7 +334,7 @@ bot.on('message', async message => {
 
                   if (Number(currentRankID) === Number(bodyRolesRankNum)){
                     if (currentXP < requiredXPAtCurrentRankID){
-                      rbx.demote(3797799, ${userID});
+                      rbx.demote(3797799, userID)
                       console.log('demoted')
                       var rblxUsername = await rbx.getUsernameFromId(userID)
                       var embed = new Discord.RichEmbed()
@@ -366,7 +366,7 @@ bot.on('message', async message => {
                       .setColor(0x26ff93)
                       .setDescription(`[${rblxUsername}](https://www.roblox.com/users/${userID}/profile) has been promoted!`)
                       await message.channel.send(embed)
-                      rbx.promote(3797799, ${userID});
+                      rbx.promote(3797799, userID)
                     }
                   }
                 }
