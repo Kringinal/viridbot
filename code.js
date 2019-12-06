@@ -119,6 +119,7 @@ bot.on('message', async message => {
          var req = rbx.getJoinRequests(3797799)
          return message.channel.send(`${req} is pending.`)
      }
+   }
   
   if (message.content.toLowerCase().startsWith(`${prefix}${xpName}`)){
     if (!message.member.roles.exists("name", "Officer")){
