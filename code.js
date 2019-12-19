@@ -1,12 +1,12 @@
 /* SETTINGS START */
-const prefix = "!"
-const groupID = 3797799;
+const prefix = ">"
+const groupID = 5352638;
 const bot_token = process.env.botToken;
 const rblxCookie = process.env.rblxCookie;
-const welcomeMessage = "Hi there, welcome to Viridian Federation!";
+const welcomeMessage = "Hi there, welcome to Tactical Company!";
 const maxXP = 10;
-const xpAuditLogChannelID = "650602840322080768";
-const mainChatChannelID = "510691362924920832";
+const xpAuditLogChannelID = "657028219928838164";
+const mainChatChannelID = "657028077812973579";
 const fireBaseURL = process.env.fireBaseURL;
 const xpName = "valor";
 /* SETTINGS END */
@@ -37,7 +37,7 @@ bot.on('message', async message => {
 
   const args = message.content.split(/[ ]+/)
   const verifiedRole = message.guild.roles.find(role => role.name === "Verified");
-  const verificationCode = ['viridian', 'apple', 'rain', 'dog', 'cat', 'food','yum','pizza','raindrop','snow','birthday','cake','burger','soda','ice','no','yes','orange','pear','plum'];
+  const verificationCode = ['tactical', 'apple', 'rain', 'dog', 'cat', 'food','yum','pizza','raindrop','snow','birthday','cake','burger','soda','ice','no','yes','orange','pear','plum'];
   const promoLogs = bot.channels.get(`${xpAuditLogChannelID}`);
   const officerRoleE = message.guild.roles.find(role => role.name === "Officer");
   const owner = message.guild.roles.find(role => role.name === "Chancellor");
