@@ -24,8 +24,8 @@ bot.on('message', async message => {
     message.channel.send(`Hello there, ${message.author}!`)
   
   if (message.content.toLowerCase() === `${prefix}av`)
-        message.channel.send(`Here you go my lord.`)
-        message.channnel.send(message.author.avatarURL)
+        message.channel.send(`Here you go my lord.`);
+        message.reply(message.author.avatarURL);
 });
 
 
