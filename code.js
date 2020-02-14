@@ -2,6 +2,7 @@
 const prefix = ">"
 const bot_token = process.env.botToken;
 const mainChatChannelID = "672320190284955658";
+const args = message.content.split(/[ ]+/)
 /* SETTINGS END */
 
 /* PACKAGES START */
