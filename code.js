@@ -43,7 +43,7 @@ bot.on('message', async message => {
       message.channel.send(Fortunes[math.floor(math.random() * Fortunes.length)]);
     }
   else {
-    message.channel.send(`Listen here fucker. I need a question so I can tell you if it will happen or not! :angry:`
+    message.channel.send(`Listen here fucker. I need a question so I can tell you if it will happen or not! :angry:`)
   }
 });
 
