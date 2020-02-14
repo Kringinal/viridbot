@@ -22,9 +22,6 @@ bot.on('message', async message => {
 
   if (message.content.toLowerCase() === `${preix}hey`)
     message.channel.send(`Hello there, ${message.author}!`)
-  }
-
-
 });
 
 
