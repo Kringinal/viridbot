@@ -2,7 +2,6 @@
 const prefix = ">"
 const bot_token = process.env.botToken;
 const mainChatChannelID = "672320190284955658";
-const args = message.content.split(/[ ]+/)
 /* SETTINGS END */
 
 /* PACKAGES START */
@@ -30,6 +29,8 @@ bot.on('ready', () => {
 })
 
 bot.on('message', async message => {
+  
+  const args = message.content.split(/[ ]+/)
     
   if (message.author.bot) return;
 
