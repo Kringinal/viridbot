@@ -10,14 +10,14 @@ const bot = new Discord.Client();
 /* PACKAGES END */
 
 /* ADDONS */
-var Fortunes = {
+var Fortunes = [
   "Yes",
   "No",
   "Fuck off",
   "Not sure",
   "Probably not loser",
   "Go die"
-};
+];
 
 /* END ADDONS */
 
