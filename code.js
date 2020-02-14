@@ -1,7 +1,6 @@
 /* SETTINGS START */
-const prefix = ">"
+/*const prefix = ">" */
 const bot_token = process.env.botToken;
-const welcomeMessage = "Hi there, welcome to Winter Armada!";
 const mainChatChannelID = "672320190284955658";
 /* SETTINGS END */
 
@@ -18,15 +17,11 @@ bot.on('ready', () => {
 })
 
 bot.on('message', async message => {
-
-  const args = message.content.split(/[ ]+/)
-  const owner = message.guild.roles.find(role => role.name === "Viceroy");
     
   if (message.author.bot) return;
-  if (message.channel.type === "dm") return;
 
-  if (message.content.toLowerCase().startsWith(`${prefix}hi`)){
-    return message.chennel.send(`Hello there, ${message.author}!`)
+  if (message.content.toLowerCase() === `${preix}hey`)
+    message.channel.send(`Hello there, ${message.author}!`)
   }
 
 
