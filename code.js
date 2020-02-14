@@ -20,7 +20,7 @@ bot.on('message', async message => {
     
   if (message.author.bot) return;
 
-  if (message.content.toLowerCase() === `${preix}hey`)
+  if (message.content.toLowerCase() === `${prefix}hey`)
     message.channel.send(`Hello there, ${message.author}!`)
 });
 
