@@ -24,7 +24,6 @@ bot.on('message', async message => {
     message.channel.send(`Hello there, ${message.author}!`)
   
   if (message.content.toLowerCase() === `${prefix}av`)
-    if message.author.has(Administrator, true)
         message.channel.send(`Here you go my lord.`)
         message.channnel.send(message.author.avatarURL)
 });
